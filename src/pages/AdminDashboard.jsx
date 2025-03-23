@@ -213,7 +213,7 @@ const AdminDashboard = () => {
                     key={user.id} 
                     className={`p-3 mb-2 rounded cursor-pointer hover:bg-gray-50 border-l-4 ${
                       selectedUser && selectedUser.id === user.id 
-                        ? 'border-blue-500 bg-blue-50' 
+                        ? 'border-[#2E3192] bg-[#2E3192]/10' 
                         : `border-${user.category === 'Loyal' ? 'green' : user.category === 'At-Risk' ? 'yellow' : 'red'}-300 bg-white`
                     }`}
                     onClick={() => handleUserSelect(user.id)}
@@ -246,25 +246,25 @@ const AdminDashboard = () => {
               <div className="border-b">
                 <nav className="flex">
                   <button 
-                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'overview' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'overview' ? 'border-b-2 border-[#2E3192] text-[#2E3192]' : 'text-gray-500 hover:text-gray-700'}`}
                     onClick={() => setActiveTab('overview')}
                   >
                     Overview
                   </button>
                   <button 
-                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'loyalty' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'loyalty' ? 'border-b-2 border-[#2E3192] text-[#2E3192]' : 'text-gray-500 hover:text-gray-700'}`}
                     onClick={() => setActiveTab('loyalty')}
                   >
                     Loyalty Analysis
                   </button>
                   <button 
-                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'offers' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'offers' ? 'border-b-2 border-[#2E3192] text-[#2E3192]' : 'text-gray-500 hover:text-gray-700'}`}
                     onClick={() => setActiveTab('offers')}
                   >
                     AI Offers
                   </button>
                   <button 
-                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'purchases' ? 'border-b-2 border-blue-500 text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}
+                    className={`px-4 py-3 font-medium text-sm ${activeTab === 'purchases' ? 'border-b-2 border-[#2E3192] text-[#2E3192]' : 'text-gray-500 hover:text-gray-700'}`}
                     onClick={() => setActiveTab('purchases')}
                   >
                     Purchase History
@@ -288,7 +288,7 @@ const AdminDashboard = () => {
                     
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <h3 className="text-sm text-gray-500 mb-1">Loyalty Score</h3>
+                        <h3 className="text-sm text-[#2E3192] mb-1">Loyalty Score</h3>
                         <p className="text-3xl font-bold">{selectedUser.loyaltyScore || 0}</p>
                         <span className={`inline-block mt-2 text-xs px-2 py-1 rounded-full ${getLoyaltyBadgeColor(selectedUser.category)}`}>
                           {selectedUser.category || 'Unknown'}
@@ -484,7 +484,7 @@ const AdminDashboard = () => {
                       ) : (
                         <button
                           onClick={() => recalculateUserLoyalty(selectedUser.id)}
-                          className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
+                          className="bg-[#2E3192]/10 hover:bg-blue-600 text-white px-3 py-1 rounded text-sm"
                         >
                           Calculate Churn Risk
                         </button>
@@ -759,28 +759,28 @@ const AdminDashboard = () => {
                     <button
                       onClick={() => handleGenerateAI('loyalty')}
                       disabled={processingAI}
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded text-sm disabled:bg-gray-400"
+                      className="bg-[#2E3192]/10 border border-[#2E3192] hover:bg-[#2E3192]/13 cursor-pointer text-[#2E3192] px-3 py-2 rounded text-sm disabled:bg-gray-400"
                     >
                       Calculate Loyalty Score
                     </button>
                     <button
                       onClick={() => handleGenerateAI('offer')}
                       disabled={processingAI}
-                      className="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded text-sm disabled:bg-gray-400"
+                      className="bg-[#2E3192]/10 border border-[#2E3192] hover:bg-[#2E3192]/13 cursor-pointer text-[#2E3192] px-3 py-2 rounded text-sm disabled:bg-gray-400"
                     >
                       Generate Offer
                     </button>
                     <button
                       onClick={() => handleGenerateAI('sentiment')}
                       disabled={processingAI}
-                      className="bg-purple-500 hover:bg-purple-600 text-white px-3 py-2 rounded text-sm disabled:bg-gray-400"
+                      className="bg-[#2E3192]/10 border border-[#2E3192] hover:bg-[#2E3192]/13 cursor-pointer text-[#2E3192] px-3 py-2 rounded text-sm disabled:bg-gray-400"
                     >
                       Analyze Sentiment
                     </button>
                     <button
                       onClick={() => handleGenerateAI('churn')}
                       disabled={processingAI}
-                      className="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded text-sm disabled:bg-gray-400"
+                      className="bg-[#2E3192]/10 border border-[#2E3192] hover:bg-[#2E3192]/13 cursor-pointer text-[#2E3192] px-3 py-2 rounded text-sm disabled:bg-gray-400"
                     >
                       Predict Churn
                     </button>
@@ -798,14 +798,14 @@ const AdminDashboard = () => {
                   </div>
                 ) : aiResponse ? (
                   <div>
-                    <div className="bg-blue-50 p-3 rounded-lg mb-4">
-                      <h3 className="font-medium text-blue-800">{aiResponse.type}</h3>
+                    <div className="bg-[#2E3192]/10 p-3 rounded-lg mb-4">
+                      <h3 className="font-medium text-[#2E3192]">{aiResponse.type}</h3>
                     </div>
                     
                     {aiResponse.type === 'Loyalty Score' ? (
                       <div className="text-center py-6">
-                        <div className="inline-block rounded-full bg-blue-100 p-6 mb-4">
-                          <span className="text-4xl font-bold text-blue-700">{aiResponse.data}</span>
+                        <div className="inline-block rounded-full bg-[#2E3192]/10 p-6 mb-4">
+                          <span className="text-4xl font-bold text-[#2E3192]">{aiResponse.data}</span>
                         </div>
                         <p className="text-gray-600">
                           {aiResponse.data >= 80 ? 'Highly Loyal Customer' :
@@ -872,7 +872,7 @@ const AdminDashboard = () => {
                             <h4 className="text-sm font-medium text-gray-500 mb-2">Key Themes</h4>
                             <div className="flex flex-wrap gap-2">
                               {aiResponse.data.keyThemes?.map((theme, idx) => (
-                                <span key={idx} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">
+                                <span key={idx} className="bg-[#2E3192]/10 text-[#2E3192] text-xs px-2 py-1 rounded-full">
                                   {theme}
                                 </span>
                               ))}
@@ -968,8 +968,8 @@ const AdminDashboard = () => {
                 <h2 className="text-xl font-semibold mb-4">Customer Analytics Overview</h2>
                 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h3 className="text-sm text-blue-500 mb-1">Total Customers</h3>
+                  <div className="bg-[#2E3192]/10 p-4 rounded-lg">
+                    <h3 className="text-sm text-[#2E3192] mb-1">Total Customers</h3>
                     <p className="text-2xl font-bold">{users.length}</p>
                   </div>
                   

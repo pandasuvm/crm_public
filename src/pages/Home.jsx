@@ -84,7 +84,7 @@ const Home = () => {
         setTimeout(() => fetchLoyaltyData(retryCount + 1), Math.pow(2, retryCount) * 1000);
       } else {
         console.error("Error fetching loyalty data:", error);
-        toast.error("Failed to load your loyalty information");
+        // toast.error("Failed to load your loyalty information");
       }
     }
   };
