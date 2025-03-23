@@ -8,7 +8,7 @@ import FeedbackForm from "../components/FeedbackForm";
 import { toast } from "react-toastify";
 import ProductsGrid from "../components/ProductsGrid";
 import RewardsSection from "../components/RewardsSection";
-import LoyaltyStatusDetails from "../components/LoyaltyStatusDetails";
+
 
 const products = [
   { 
